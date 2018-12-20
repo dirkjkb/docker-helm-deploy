@@ -25,7 +25,8 @@ RUN curl -L https://github.com/roboll/helmfile/releases/download/${HELMFILE_VERS
 
 RUN apk add --update -t deps git
 RUN curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-${CLOUD_SDK_VERSION}-linux-x86_64.tar.gz && \
-    tar xzf google-cloud-sdk-${CLOUD_SDK_VERSION}-linux-x86_64.tar.gz 
+    tar -zxvf google-cloud-sdk-${CLOUD_SDK_VERSION}-linux-x86_64.tar.gz && \ 
+    rm -rf google-cloud-sdk-${CLOUD_SDK_VERSION}-linux-x86_64.tar.gz
 ENV PATH /google-cloud-sdk/bin:$PATH
 RUN gcloud config set core/disable_usage_reporting true && \
     gcloud config set component_manager/disable_update_check true && \
