@@ -1,7 +1,7 @@
 FROM docker:18.09
 
 ARG CLOUD_SDK_VERSION=228.0.0
-ARG HELM_VERSION=v2.12.1
+ARG HELM_VERSION=v2.10.0
 ARG HELMFILE_VERSION=v0.41.0
 
 RUN apk add --no-cache bash gawk sed grep bc coreutils
